@@ -140,4 +140,5 @@ public sealed class MongoRepository<TDocument> : IMongoRepository<TDocument>
                 true)
             .FirstOrDefault()!).CollectionName;
     }
+    
 }

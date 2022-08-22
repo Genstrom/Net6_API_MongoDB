@@ -1,9 +1,10 @@
-﻿using EqspensesAPI.Entities;
+﻿using EqspensesAPI.Repositories;
 
 namespace EqspensesAPI.Interfaces;
 
-public interface IUnitOfWork
-{
-    IMongoRepository<User> Users { get; }
-    IMongoRepository<Expense> Expenses { get; }
-}
+
+    public interface IUnitOfWork
+    {
+        IUserService Users { get; }
+        IExpenseService Expenses { get; }
+    }

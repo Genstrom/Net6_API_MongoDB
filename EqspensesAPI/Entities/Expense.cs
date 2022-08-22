@@ -7,7 +7,7 @@ public class Expense : Document
 {
     public DateTime Date { get; set; }
     public string Specification { get; set; } = null!;
-    public string Invoice { get; set; }
+    public bool Invoice { get; set; }
     public decimal TotalCost { get; set; }
     public decimal Vat { get; set; }
     public decimal ExVat { get; set; }

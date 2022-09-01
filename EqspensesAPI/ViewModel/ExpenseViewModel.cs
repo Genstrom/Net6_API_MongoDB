@@ -12,3 +12,9 @@ public class ExpenseViewModel
     public string? Currency { get; set; }
     public string? ImageUrl { get; set; }
 }
+
+public class ExpensePerMonthAndTotalCostViewModel
+{
+    public IEnumerable<ExpenseViewModel> ExpenseList { get; set; }
+    public decimal TotalExpensesCost { get; set; }
+}

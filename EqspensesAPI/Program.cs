@@ -22,6 +22,7 @@ builder.Services.AddSingleton<IMongoDbSettings>(serviceProvider =>
 builder.Services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IExpenseMapper, ExpenseMapper>();
+builder.Services.AddScoped<IExpenseViewModelMapper, ExpenseViewModelMapper>();
 // builder.Services.AddScoped(typeof(IUserService), typeof(IUserService));
 builder.Services.AddSingleton(FirebaseApp.Create(new AppOptions()
 {

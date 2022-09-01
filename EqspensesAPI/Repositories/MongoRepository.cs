@@ -22,10 +22,10 @@ public sealed class MongoRepository<TDocument> : IMongoRepository<TDocument>
         return Task.FromResult<IQueryable<TDocument>>(_collection.AsQueryable());
     }
 
-    public IEnumerable<TDocument> FilterBy(
+    public Task<IEnumerable<TDocument>> FilterBy(
         Expression<Func<TDocument, bool>> filterExpression)
     {
-        return _collection.Find(filterExpression).ToEnumerable();
+        return  Task.FromResult(_collection.Find(filterExpression).ToEnumerable());
     }
 
     public IEnumerable<TProjected> FilterBy<TProjected>(

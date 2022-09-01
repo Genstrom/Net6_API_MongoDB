@@ -6,7 +6,7 @@ public interface IMongoRepository<TDocument> where TDocument : IDocument
 {
     Task<IQueryable<TDocument>> AsQueryable();
 
-    IEnumerable<TDocument> FilterBy(
+    Task<IEnumerable<TDocument>> FilterBy(
         Expression<Func<TDocument, bool>> filterExpression);
 
     IEnumerable<TProjected> FilterBy<TProjected>(

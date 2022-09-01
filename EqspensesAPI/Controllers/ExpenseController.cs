@@ -39,11 +39,11 @@ public class ExpenseController : Controller
     }
     [Authorize]
     [HttpGet("find/User-Expenses-month/{month}")]
-    public async Task<ActionResult<Expense>> GetUserExpenses(int month)
+    public async Task<ActionResult<ExpensePerMonthAndTotalCostViewModel>> GetUserExpenses(int month)
     {
         var user = FirebaseAuthenticationHandler.GetUser();
         var expense = await _unitOfWork.Expenses.GetUserExpenseByMonth(user, month);
-
+        
         return Ok(expense);
     }
 
@@ -55,4 +55,13 @@ public class ExpenseController : Controller
         
         return StatusCode(201);
     }
+
+    [Authorize]
+    [HttpDelete("deleteExpense/${id}")]
+    public async Task<IActionResult> Delete(string id)
+    {
+        await _unitOfWork.Expenses.Delete(id);
+        return StatusCode(200);
+    }
+    
 }

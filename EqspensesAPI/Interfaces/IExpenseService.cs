@@ -9,7 +9,9 @@ public interface IExpenseService
     Task<IEnumerable<Expense>> GetExpensesAsync();
     Task<Expense> GetExpenseByExpenseId(string expenseId);
     Task<IEnumerable<Expense>> GetExpenseByUserGoogleId(User user);
-    Task<IEnumerable<Expense>> GetUserExpenseByMonth(User user, int month);
+    Task<ExpensePerMonthAndTotalCostViewModel> GetUserExpenseByMonth(User user, int month);
     Task Update(Expense expense);
-    Task Delete(Expense expense);
+
+    Decimal GetTotalCosts(IEnumerable<Expense> expenseList);
+    Task Delete(string id);
 }

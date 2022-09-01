@@ -14,5 +14,6 @@ public class Expense : Document
     public decimal VatPercent { get; set; }
     public string Currency { get; set; }
     public string ImageUrl { get; set; }
+    public int MonthId { get; set; }
     public User User { get; set; }
 }

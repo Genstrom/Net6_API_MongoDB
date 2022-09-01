@@ -19,6 +19,7 @@ public class ExpenseMapper : IExpenseMapper
             VatPercent = model.VatPercentage,
             Currency = model.Currency,
             ImageUrl = model.ImageUrl,
+            MonthId = model.Date.Month,
             User = user,
 
 
